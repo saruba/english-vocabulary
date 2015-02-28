@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Learn english</title>
+    <link rel="stylesheet" href="./static/vendor/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./static/css/style.css"/>
+</head>
+<body ng-app="english">
+<div class="container container-table" en-vocabulary>
+    <div class="container-cell">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="text-center">Vocabulary</h1>
+                <ul class="list-unstyled">
+                    <li>
+                        <h2 ng-bind="word.english"></h2>
+                    </li>
+                    <li>
+                        <p><em ng-bind="word.type"></em></p>
+                    </li>
+                    <li>
+                        <p class="lead" ng-bind="word.synonyms"></p>
+                    </li>
+                    <li>
+                        <p class="lead" ng-bind="word.spanish"></p>
+                    </li>
+                    <li>
+                        <blockquote class="blockquote-reverse">
+                            <p ng-bind="word.sentence"></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <!--TODO show typed letters-->
+                <!--TODO add sounds-->
+                <div class="form-group">
+                    <label for="wordInput" class="hidden">word</label>
+                    <input autocomplete="false" id="wordInput" type="text" ng-model="wordModel"
+                           ng-keyup="inputWord()" class="form-control"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./static/vendor/angular/angular.js"></script>
+<script src="./static/vendor/jquery/dist/jquery.js"></script>
+<script src="./static/js/app/data.js"></script>
+<script src="./static/js/app/app.js"></script>
+<script src="./static/js/app/vocabulary/vocabulary.js"></script>
+</body>
+</html>
